@@ -1,0 +1,47 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: 'AWS::Serverless-2016-10-31'
+
+
+Resources:
+  
+  Layer12:
+    Type: AWS::Serverless::LayerVersion
+    Properties:
+      LayerName: layer-12
+      Description: Lambda layer 12
+      ContentUri: ../opencv4nodejs-layer-node12.zip        
+  Test12:
+      Type: 'AWS::Serverless::Function'
+      Properties:
+        Layers:
+          - !Ref Layer12
+        FunctionName: test12
+        Handler: handler.handler
+
+  Layer14:
+    Type: AWS::Serverless::LayerVersion
+    Properties:
+      LayerName: layer-14
+      Description: Lambda layer 14
+      ContentUri: ../opencv4nodejs-layer-node14.zip
+  Test14:
+      Type: 'AWS::Serverless::Function'
+      Properties:
+        Layers:
+          - !Ref Layer14
+        FunctionName: test14
+        Handler: handler.handler
+
+  Layer16:
+    Type: AWS::Serverless::LayerVersion
+    Properties:
+      LayerName: layer-16
+      Description: Lambda layer 16
+      ContentUri: ../opencv4nodejs-layer-node16.zip
+  Test16:
+      Type: 'AWS::Serverless::Function'
+      Properties:
+        Layers:
+          - !Ref Layer16
+        FunctionName: test16
+        Handler: handler.handler   

@@ -1,0 +1,34 @@
+{
+  "name": "opencv4nodejs-lambda-layer",
+  "version": "1.0.0",
+  "description": "AWS Lambda layer for opencv4nodejs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "package-opencv4nodejs-lambda-layer": "bash package.bash"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/piercus/opencv4nodejs-lambda-layer.git"
+  },
+  "keywords": [
+    "opencv",
+    "opencv4nodejs",
+    "layer",
+    "lambda",
+    "lambda-layer",
+    "computervision",
+    "cv"
+  ],
+  "dependencies": {
+    "@u4/opencv4nodejs": "^6.2.1"
+  },
+  "author": "Pierre Colle <piercus@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/piercus/opencv4nodejs-lambda-layer/issues"
+  },
+  "homepage": "https://github.com/piercus/opencv4nodejs-lambda-layer#readme"
+}
