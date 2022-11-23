@@ -4,7 +4,8 @@ on:
   push:
     branches: [ master ]
 
-build:
+jobs:
+  build:
     name: Build and Release Asset
     runs-on: ubuntu-latest
     steps:
