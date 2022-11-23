@@ -33,7 +33,7 @@ jobs:
           draft: false
           prerelease: false
       - name: Upload Release Asset 12
-        id: upload-release-asset 
+        id: upload-release-asset12
         uses: actions/upload-release-asset@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -43,7 +43,7 @@ jobs:
           asset_name: opencv4nodejs-layer-node12.zip
           asset_content_type: application/zip
       - name: Upload Release Asset 14
-        id: upload-release-asset 
+        id: upload-release-asset14
         uses: actions/upload-release-asset@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -53,7 +53,7 @@ jobs:
           asset_name: opencv4nodejs-layer-node14.zip
           asset_content_type: application/zip
       - name: Upload Release Asset 16
-        id: upload-release-asset 
+        id: upload-release-asset16
         uses: actions/upload-release-asset@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
