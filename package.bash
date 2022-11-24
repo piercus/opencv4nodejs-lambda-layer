@@ -15,6 +15,7 @@ fi
 NODE_VERSION="$1"
 OUTPUT="$2"
 
+echo "Packaging starts for Node ${NODE_VERSION}"
 mkdir -p /tmp/opencv4nodejs-lambda-layer
 rm -rf /tmp/opencv4nodejs-lambda-layer/*
 
@@ -28,4 +29,5 @@ mv /tmp/opencv4nodejs-lambda-layer/node_modules/ /tmp/opencv4nodejs-lambda-layer
 zip -r /tmp/opencv4nodejs-lambda-layer/package.zip /tmp/opencv4nodejs-lambda-layer/nodejs
 
 mv /tmp/opencv4nodejs-lambda-layer/package.zip $OUTPUT
-rm -rf /tmp/opencv4nodejs-lambda-layer
+sudo rm -rf /tmp/opencv4nodejs-lambda-layer
+echo "Packaging done for Node ${NODE_VERSION} in ${OUTPUT}"
