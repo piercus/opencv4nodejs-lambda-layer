@@ -13,6 +13,7 @@ Resources:
   Test12:
       Type: 'AWS::Serverless::Function'
       Properties:
+        Runtime: nodejs12.x
         Layers:
           - !Ref Layer12
         FunctionName: test12
@@ -27,6 +28,7 @@ Resources:
   Test14:
       Type: 'AWS::Serverless::Function'
       Properties:
+        Runtime: nodejs14.x
         Layers:
           - !Ref Layer14
         FunctionName: test14
@@ -41,6 +43,7 @@ Resources:
   Test16:
       Type: 'AWS::Serverless::Function'
       Properties:
+        Runtime: nodejs16.x
         Layers:
           - !Ref Layer16
         FunctionName: test16
