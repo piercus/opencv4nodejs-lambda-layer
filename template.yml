@@ -3,13 +3,13 @@ Transform: 'AWS::Serverless-2016-10-31'
 
 
 Resources:
-  
+
   Layer12:
     Type: AWS::Serverless::LayerVersion
     Properties:
       LayerName: layer-12
       Description: Lambda layer 12
-      ContentUri: ../opencv4nodejs-layer-node12.zip        
+      ContentUri: ./opencv4nodejs-layer-node12.zip
   Test12:
       Type: 'AWS::Serverless::Function'
       Properties:
@@ -24,7 +24,7 @@ Resources:
     Properties:
       LayerName: layer-14
       Description: Lambda layer 14
-      ContentUri: ../opencv4nodejs-layer-node14.zip
+      ContentUri: ./opencv4nodejs-layer-node14.zip
   Test14:
       Type: 'AWS::Serverless::Function'
       Properties:
@@ -39,7 +39,7 @@ Resources:
     Properties:
       LayerName: layer-16
       Description: Lambda layer 16
-      ContentUri: ../opencv4nodejs-layer-node16.zip
+      ContentUri: ./opencv4nodejs-layer-node16.zip
   Test16:
       Type: 'AWS::Serverless::Function'
       Properties:
@@ -47,4 +47,4 @@ Resources:
         Layers:
           - !Ref Layer16
         FunctionName: test16
-        Handler: handler.handler   
+        Handler: handler.handler
