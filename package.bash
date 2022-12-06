@@ -7,14 +7,9 @@ if [[ $1 -eq 0 ]] ; then
     exit 1
 fi
 
-if [[ $2 -eq 0 ]] ; then
-    echo 'please provide an output as second argument'
-    exit 1
-fi
-
 NODE_VERSION="$1"
 OUTPUT="$2"
-OPENCV_VERSION="$1"
+OPENCV_VERSION="$3"
 
 echo "Packaging starts for Node ${NODE_VERSION} - opencv ${OPENCV_VERSION}"
 mkdir -p /tmp/opencv4nodejs-lambda-layer
