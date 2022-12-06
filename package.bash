@@ -14,14 +14,15 @@ fi
 
 NODE_VERSION="$1"
 OUTPUT="$2"
+OPENCV_VERSION="$1"
 
-echo "Packaging starts for Node ${NODE_VERSION}"
+echo "Packaging starts for Node ${NODE_VERSION} - opencv ${OPENCV_VERSION}"
 mkdir -p /tmp/opencv4nodejs-lambda-layer
 rm -rf /tmp/opencv4nodejs-lambda-layer/*
 
 cp guest/* /tmp/opencv4nodejs-lambda-layer/
 
-./package-host-cmd.bash ${NODE_VERSION} /tmp/opencv4nodejs-lambda-layer/
+./package-host-cmd.bash ${NODE_VERSION} /tmp/opencv4nodejs-lambda-layer/ ${OPENCV_VERSION}
 
 mkdir /tmp/opencv4nodejs-lambda-layer/nodejs
 mv /tmp/opencv4nodejs-lambda-layer/node_modules/ /tmp/opencv4nodejs-lambda-layer/nodejs/node_modules/
