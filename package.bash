@@ -34,4 +34,6 @@ zip -r package.zip nodejs
 cd $CURRENT
 
 mv /tmp/opencv4nodejs-lambda-layer/package.zip $OUTPUT
+sudo rm -rf /tmp/opencv4nodejs-lambda-layer
+
 echo "Packaging done for Node ${NODE_VERSION} in ${OUTPUT}"
