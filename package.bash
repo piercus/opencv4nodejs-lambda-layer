@@ -25,9 +25,13 @@ cp guest/* /tmp/opencv4nodejs-lambda-layer/
 
 mkdir /tmp/opencv4nodejs-lambda-layer/nodejs
 mv /tmp/opencv4nodejs-lambda-layer/node_modules/ /tmp/opencv4nodejs-lambda-layer/nodejs/node_modules/
+CURRENT=$(pwd)
 
-zip -r /tmp/opencv4nodejs-lambda-layer/package.zip /tmp/opencv4nodejs-lambda-layer/nodejs
+cd /tmp/opencv4nodejs-lambda-layer/
+
+zip -r package.zip nodejs
+
+cd $CURRENT
 
 mv /tmp/opencv4nodejs-lambda-layer/package.zip $OUTPUT
-sudo rm -rf /tmp/opencv4nodejs-lambda-layer
 echo "Packaging done for Node ${NODE_VERSION} in ${OUTPUT}"
