@@ -24,7 +24,7 @@ Resources:
       LayerName: layer-18
       Description: Lambda layer 18
       ContentUri: ./opencv4nodejs-layer-node18.zip
-  Test16:
+  Test18:
       Type: 'AWS::Serverless::Function'
       Properties:
         Runtime: nodejs18.x
