@@ -17,15 +17,13 @@ jobs:
       - uses: aws-actions/setup-sam@v2
       - name: Build project # This would actually build your project, using zip for an example artifact
         run: |
+          bash package.bash 18 opencv4nodejs-layer-node16.zip ${{ env.OPENCV4NODEJS_AUTOBUILD_OPENCV_VERSION }}
           bash package.bash 16 opencv4nodejs-layer-node16.zip ${{ env.OPENCV4NODEJS_AUTOBUILD_OPENCV_VERSION }}
-          bash package.bash 12 opencv4nodejs-layer-node12.zip ${{ env.OPENCV4NODEJS_AUTOBUILD_OPENCV_VERSION }}
-          bash package.bash 14 opencv4nodejs-layer-node14.zip ${{ env.OPENCV4NODEJS_AUTOBUILD_OPENCV_VERSION }}
           
       - name: Test packages
         run: |
           bash test_package.bash 16
-          bash test_package.bash 12
-          bash test_package.bash 14
+          bash test_package.bash 18
           
       - name: Create Release
         id: create_release
@@ -37,26 +35,6 @@ jobs:
           release_name: ${{ env.OPENCV4NODEJS_AUTOBUILD_OPENCV_VERSION }}
           draft: false
           prerelease: false
-      - name: Upload Release Asset 12
-        id: upload-release-asset12
-        uses: actions/upload-release-asset@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          upload_url: ${{ steps.create_release.outputs.upload_url }} # This pulls from the CREATE RELEASE step above, referencing it's ID to get its outputs object, which include a `upload_url`. See this blog post for more info: https://jasonet.co/posts/new-features-of-github-actions/#passing-data-to-future-steps
-          asset_path: ./opencv4nodejs-layer-node12.zip
-          asset_name: opencv4nodejs-layer-node12-${{ env.OPENCV4NODEJS_AUTOBUILD_OPENCV_VERSION }}.zip
-          asset_content_type: application/zip
-      - name: Upload Release Asset 14
-        id: upload-release-asset14
-        uses: actions/upload-release-asset@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          upload_url: ${{ steps.create_release.outputs.upload_url }} # This pulls from the CREATE RELEASE step above, referencing it's ID to get its outputs object, which include a `upload_url`. See this blog post for more info: https://jasonet.co/posts/new-features-of-github-actions/#passing-data-to-future-steps
-          asset_path: ./opencv4nodejs-layer-node14.zip
-          asset_name: opencv4nodejs-layer-node14-${{ env.OPENCV4NODEJS_AUTOBUILD_OPENCV_VERSION }}.zip
-          asset_content_type: application/zip
       - name: Upload Release Asset 16
         id: upload-release-asset16
         uses: actions/upload-release-asset@v1
@@ -66,4 +44,14 @@ jobs:
           upload_url: ${{ steps.create_release.outputs.upload_url }} # This pulls from the CREATE RELEASE step above, referencing it's ID to get its outputs object, which include a `upload_url`. See this blog post for more info: https://jasonet.co/posts/new-features-of-github-actions/#passing-data-to-future-steps
           asset_path: ./opencv4nodejs-layer-node16.zip
           asset_name: opencv4nodejs-layer-node16-${{ env.OPENCV4NODEJS_AUTOBUILD_OPENCV_VERSION }}.zip
+          asset_content_type: application/zip
+      - name: Upload Release Asset 18
+        id: upload-release-asset18
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }} # This pulls from the CREATE RELEASE step above, referencing it's ID to get its outputs object, which include a `upload_url`. See this blog post for more info: https://jasonet.co/posts/new-features-of-github-actions/#passing-data-to-future-steps
+          asset_path: ./opencv4nodejs-layer-node18.zip
+          asset_name: opencv4nodejs-layer-node18-${{ env.OPENCV4NODEJS_AUTOBUILD_OPENCV_VERSION }}.zip
           asset_content_type: application/zip
