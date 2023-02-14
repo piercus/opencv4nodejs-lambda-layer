@@ -23,7 +23,7 @@
     "cv"
   ],
   "dependencies": {
-    "@u4/opencv4nodejs": "^6.4.2"
+    "@u4/opencv4nodejs": "6.2.1"
   },
   "author": "Pierre Colle <piercus@gmail.com>",
   "license": "MIT",
