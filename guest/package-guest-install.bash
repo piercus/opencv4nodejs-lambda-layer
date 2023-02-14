@@ -6,6 +6,7 @@ UID1=`stat -c '%u' .`
 GID1=`stat -c '%g' .`
 echo "chown -R $UID1:$GID1 /root"
 chown -R $UID1:$GID1 "/root"
+OPENCV4NODEJS_DISABLE_AUTOBUILD=1
 echo "Npm Install"
 npm install
 echo "build-opencv"
