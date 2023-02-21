@@ -10,5 +10,6 @@ echo "chown -R $UID1:$GID1 /root"
 chown -R $UID1:$GID1 "/root"
 echo "Run: npm install  --foreground-scripts"
 npm install --foreground-scripts
-echo "Run: npx build-opencv build --version \"${OPENCV_VERSION}\""
-npx build-opencv build --version "${OPENCV_VERSION}"
+echo "Run: npx build-opencv build"
+export OPENCV4NODEJS_AUTOBUILD_OPENCV_VERSION="${OPENCV_VERSION}"
+npx build-opencv rebuild 
