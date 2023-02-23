@@ -106,3 +106,4 @@ dist
 
 tmp
 package-bck.json
+guest/package-lock.json

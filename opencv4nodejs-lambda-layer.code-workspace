@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../opencv4nodejs"
+		},
+		{
+			"path": "../npm-opencv-build"
+		}
+	],
+	"settings": {}
+}
