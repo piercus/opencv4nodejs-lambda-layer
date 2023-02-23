@@ -11,6 +11,6 @@ chown -R $UID1:$GID1 "/root"
 echo "Run: npm install  --foreground-scripts"
 npm install --foreground-scripts
 echo "Run: cd node_modules/@u4/opencv4nodejs && npm run build && cd -"
-cd node_modules/@u4/opencv4nodejs && npm install && npm run build && cd -
+cd node_modules/@u4/opencv4nodejs && npm install && npm run build && rm -rf node_modules && cd -
 echo "Run: npx build-opencv --version \"${OPENCV_VERSION}\" build"
 npx build-opencv --version "${OPENCV_VERSION}" rebuild 
