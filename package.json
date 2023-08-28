@@ -1,0 +1,45 @@
+{
+  "name": "opencv4nodejs-lambda-layer",
+  "version": "1.0.0",
+  "description": "AWS Lambda Layer for opencv4nodejs",
+  "main": "handler.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "release": {
+    "branches": [
+      "master"
+    ],
+    "plugins": [
+      "@semantic-release/commit-analyzer",
+      "@semantic-release/release-notes-generator",
+      [
+        "@semantic-release/github",
+        {
+          "assets": [
+            {
+              "path": "dist/calib3d.zip",
+              "label": "Calib3d"
+            },
+            {
+              "path": "dist/imgcodecs.zip",
+              "label": "Imgcodecs"
+            }
+          ]
+        }
+      ],
+      "@semantic-release/git"
+    ]
+  },
+  "author": "Pierre Colle <piercus@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "archiver": "^6.0.0",
+    "bluebird": "^3.7.2",
+    "commander": "^11.0.0",
+    "mkdirp": "^3.0.1",
+    "recursive-copy": "^2.0.14",
+    "rimraf": "^5.0.1",
+    "yaml": "^2.3.2"
+  }
+}

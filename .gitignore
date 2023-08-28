@@ -107,3 +107,5 @@ dist
 tmp
 package-bck.json
 guest/package-lock.json
+dist
+opencv4nodejs-lambda-layer.code-workspace

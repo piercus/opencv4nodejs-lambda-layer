@@ -8,3 +8,5 @@ OPENCV_VERSION="$3"
 
 echo "docker run -v \"$LOCAL_FOLDER\":/opt/nodejs \"public.ecr.aws/sam/build-nodejs${NODE_VERSION}.x:latest\" /bin/sh -c \"cd /opt/nodejs && bash package-guest-cmd.bash ${NODE_VERSION} ${OPENCV_VERSION}\""
 docker run -v "$LOCAL_FOLDER":/opt/nodejs "public.ecr.aws/sam/build-nodejs${NODE_VERSION}.x:latest" /bin/sh -c "cd /opt/nodejs && bash package-guest-cmd.bash ${NODE_VERSION} ${OPENCV_VERSION}"
+
+sudo chown -R $USER: $LOCAL_FOLDER/node_modules
