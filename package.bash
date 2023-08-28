@@ -19,6 +19,7 @@ cp guest/* /tmp/opencv4nodejs-lambda-layer/
 
 ./package-host-cmd.bash ${NODE_VERSION} /tmp/opencv4nodejs-lambda-layer/ ${OPENCV_VERSION}
 
+chown -R $USER: /tmp/opencv4nodejs-lambda-layer/node_modules/
 mkdir /tmp/opencv4nodejs-lambda-layer/nodejs
 mv /tmp/opencv4nodejs-lambda-layer/node_modules/ /tmp/opencv4nodejs-lambda-layer/nodejs/node_modules/
 CURRENT=$(pwd)
