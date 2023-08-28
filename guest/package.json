@@ -26,7 +26,7 @@
     "cv"
   ],
   "dependencies": {
-    "@u4/opencv4nodejs": "git://github.com/piercus/opencv4nodejs.git#piercus-opencv-build"
+    "@u4/opencv4nodejs": "^6.5.2"
   },
   "author": "Pierre Colle <piercus@gmail.com>",
   "license": "MIT",
