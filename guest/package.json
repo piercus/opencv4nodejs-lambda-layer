@@ -6,9 +6,6 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "bin": {
-    "package-opencv4nodejs-lambda-layer": "bash package.bash"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/piercus/opencv4nodejs-lambda-layer.git"
