@@ -1,5 +1,8 @@
 name: Semantic release
 
+on:
+  push
+
 env:
   OPENCV4NODEJS_AUTOBUILD_OPENCV_VERSION: 4.6.0
 
