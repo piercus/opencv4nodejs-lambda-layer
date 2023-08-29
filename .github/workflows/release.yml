@@ -13,11 +13,18 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
-      - uses: aws-actions/setup-sam@v2
-      - name: Build project 
+      - name: Setup SAM
+        uses: aws-actions/setup-sam@v2
+      - name: Setup Node.js 18
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+      - name: Install
+        run: npm ci
+      - name: Build zips 
         run: node ./bin/package-layers.js --node-version 18 --opencv-version ${{ env.OPENCV4NODEJS_AUTOBUILD_OPENCV_VERSION }}
           
-      - name: Test packages
+      - name: Test zips
         run: node ./bin/test-layers.js --node-version 18 --opencv-version ${{ env.OPENCV4NODEJS_AUTOBUILD_OPENCV_VERSION }}
           
       - name: Semantic Release
