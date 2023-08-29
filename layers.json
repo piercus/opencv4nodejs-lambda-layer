@@ -1,5 +1,5 @@
 {
-	"basic": {
+	"base": {
 		"flags": "",
 		"testStr": "assert(typeof(cv.imread) === 'function')"
 	}
