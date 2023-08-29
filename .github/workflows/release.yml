@@ -11,7 +11,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
       - uses: aws-actions/setup-sam@v2
-      - name: Build project # This would actually build your project, using zip for an example artifact
+      - name: Build project 
         run: node ./bin/package-layers.bash --node-version 18 --opencv-version ${{ env.OPENCV4NODEJS_AUTOBUILD_OPENCV_VERSION }}
           
       - name: Test packages
