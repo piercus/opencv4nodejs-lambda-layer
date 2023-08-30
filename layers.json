@@ -45,7 +45,7 @@
 		],
 		"testStr": "assert(typeof(cv.solvePnp) === 'function')"
 	},
-	"imgcodecs": {
+	"imread": {
 		"flags": [
 			"-DCMAKE_BUILD_TYPE=RELEASE",
 			"-DBUILD_opencv_python_tests=OFF",
