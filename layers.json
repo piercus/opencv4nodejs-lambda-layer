@@ -85,13 +85,13 @@
 		],
 		"remainingFlags": [],
 		"failureFlags": [{
-				"flag": "-DBUILD_opencv_highgui=OFF",
+				"flag": "-DBUILD_opencv_highgui=OFF"
 			}, {
-				"flag": "-DBUILD_opencv_imgproc=OFF",
+				"flag": "-DBUILD_opencv_imgproc=OFF"
 			}, {
-				"flag": "-DBUILD_opencv_imgcodecs=OFF",
+				"flag": "-DBUILD_opencv_imgcodecs=OFF"
 			}, {
-				"flag": "-DBUILD_opencv_videoio=OFF",
+				"flag": "-DBUILD_opencv_videoio=OFF"
 		}],
 		"testStr": "assert(typeof(cv.imread) === 'function')"
 	}
