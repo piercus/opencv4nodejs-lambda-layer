@@ -22,8 +22,8 @@
               "label": "Calib3d"
             },
             {
-              "path": "dist/imgcodecs.zip",
-              "label": "Imgcodecs"
+              "path": "dist/orb.zip",
+              "label": "Orb"
             }
           ]
         }
