@@ -2,19 +2,14 @@
 	"calib3d": {
 		"flags":[
 			"-DCMAKE_BUILD_TYPE=RELEASE",
-			"-DBUILD_opencv_core=ON",
-			"-DBUILD_opencv_calib3d=ON",
 			"-DBUILD_opencv_python_tests=OFF",
-			"-DBUILD_opencv_imgproc=ON",
-			"-DBUILD_opencv_imgcodecs=ON",
+			"-DBUILD_opencv_imgcodecs=OFF",
 			"-DBUILD_opencv_videoio=OFF",
 			"-DBUILD_opencv_highgui=OFF",
 			"-DBUILD_opencv_video=OFF",
-			"-DBUILD_opencv_features2d=ON",
 			"-DBUILD_opencv_objdetect=OFF",
 			"-DBUILD_opencv_dnn=OFF",
 			"-DBUILD_opencv_ml=OFF",
-			"-DBUILD_opencv_flann=ON",
 			"-DBUILD_opencv_photo=OFF",
 			"-DBUILD_opencv_gapi=OFF",
 			"-DBUILD_opencv_face=OFF",
@@ -41,9 +36,16 @@
 			"-DWITH_JASPER=OFF",
 			"-DWITH_OPENEXR=OFF",
 			"-DBUILD_opencv_python=OFF",
-			"-DBUILD_opencv_java=OFF"
+			"-DBUILD_opencv_java=OFF"		  
 		],
-		"testStr": "assert(typeof(cv.solvePnp) === 'function')"
+		"remainingFlags": [
+			"-DBUILD_opencv_core=OFF",
+			"-DBUILD_opencv_calib3d=OFF",
+			"-DBUILD_opencv_imgproc=OFF",	
+			"-DBUILD_opencv_features2d=OFF",
+			"-DBUILD_opencv_flann=OFF"
+		],
+		"testStr": "assert(typeof(cv.solvePnP) === 'function')"
 	},
 	"imread": {
 		"flags": [

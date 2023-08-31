@@ -5,7 +5,8 @@ const packageLayers = require('../lib/package-layers');
 
 program
 	.option('--node-version <version>')
-	.option('--opencv-version <version>');
+	.option('--opencv-version <version>')
+	.option('--layer-name <name>');
 
 program.parse();
 
