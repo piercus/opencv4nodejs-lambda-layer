@@ -47,56 +47,6 @@
 		],
 		"testStr": "assert(typeof(cv.solvePnP) === 'function')"
 	},
-	"imread": {
-		"flags": [
-			"-DCMAKE_BUILD_TYPE=RELEASE",
-			"-DBUILD_opencv_python_tests=OFF",
-			"-DBUILD_opencv_video=OFF",
-			"-DBUILD_opencv_objdetect=OFF",
-			"-DBUILD_opencv_dnn=OFF",
-			"-DBUILD_opencv_ml=OFF",
-			"-DBUILD_opencv_photo=OFF",
-			"-DBUILD_opencv_gapi=OFF",
-			"-DBUILD_opencv_face=OFF",
-			"-DBUILD_opencv_img_hash=OFF",
-			"-DBUILD_opencv_text=OFF",
-			"-DBUILD_opencv_tracking=OFF",
-			"-DBUILD_opencv_videostab=OFF",
-			"-DBUILD_opencv_xfeatures2d=OFF",
-			"-DBUILD_opencv_ximgproc=OFF",
-			"-DWITH_IPP=OFF",
-			"-DWITH_V4L=OFF",
-			"-DWITH_FFMPEG=OFF",
-			"-DWITH_GTK=OFF",
-			"-DWITH_PROTOBUF=OFF",
-			"-DBUILD_PROTOBUF=OFF",
-			"-DOPENCV_DNN_OPENCL=OFF",
-			"-DWITH_WIN32UI=OFF",
-			"-DWITH_TIFF=OFF",
-			"-DWITH_WEBP=OFF",
-			"-DWITH_JASPER=OFF",
-			"-DWITH_OPENEXR=OFF",
-			"-DBUILD_opencv_python=OFF",
-			"-DBUILD_opencv_java=OFF",
-			"-DBUILD_opencv_flann=OFF",
-			"-DWITH_GSTREAMER=OFF",
-			"-DWITH_PNG=OFF",
-			"-DWITH_JPEG=OFF",
-			"-DWITH_OPENJPEG=OFF",
-			"-DBUILD_opencv_features2d=OFF"			
-		],
-		"remainingFlags": [],
-		"failureFlags": [{
-				"flag": "-DBUILD_opencv_highgui=OFF"
-			}, {
-				"flag": "-DBUILD_opencv_imgproc=OFF"
-			}, {
-				"flag": "-DBUILD_opencv_imgcodecs=OFF"
-			}, {
-				"flag": "-DBUILD_opencv_videoio=OFF"
-		}],
-		"testStr": "assert(typeof(cv.imread) === 'function')"
-	},
 	"orb": {
 		"flags": [
 			"-DCMAKE_BUILD_TYPE=RELEASE",
@@ -127,8 +77,6 @@
 			"-DBUILD_opencv_java=OFF",
 			"-DBUILD_opencv_flann=OFF",
 			"-DWITH_GSTREAMER=OFF",
-			"-DWITH_PNG=OFF",
-			"-DWITH_JPEG=OFF",
 			"-DWITH_OPENJPEG=OFF",
 			"-DBUILD_opencv_xfeatures2d=OFF",
 			"-DBUILD_opencv_ximgproc=OFF",
@@ -137,6 +85,10 @@
 		"remainingFlags": [],
 		"failureFlags": [{
 				"flag": "-DBUILD_opencv_highgui=OFF"
+			},{
+				"flag": "-DWITH_PNG=OFF"
+			},{
+				"flag": "-DWITH_JPEG=OFF"
 			}, {
 				"flag": "-DBUILD_opencv_imgproc=OFF"
 			}, {
@@ -146,6 +98,6 @@
 			},{
 				"flag": "-DBUILD_opencv_features2d=OFF"
 		}],
-		"testStr": "assert(typeof((new cv.ORBDetector(500)).detect) === 'function'); assert(typeof(cv.imread) === 'function');"
+		"testStr": "assert(typeof((new cv.ORBDetector(500)).detect) === 'function'); assert(typeof(cv.imread) === 'function'); assert(typeof(cv.matchKnnFlannBased) === 'function');assert(typeof(cv.imread('./image.png')) === 'object')"
 	}
 }
