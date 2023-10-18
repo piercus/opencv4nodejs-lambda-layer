@@ -59,7 +59,6 @@
 			"-DBUILD_opencv_face=OFF",
 			"-DBUILD_opencv_img_hash=OFF",
 			"-DBUILD_opencv_text=OFF",
-			"-DBUILD_opencv_tracking=OFF",
 			"-DBUILD_opencv_videostab=OFF",
 			"-DWITH_IPP=OFF",
 			"-DWITH_V4L=OFF",
@@ -75,16 +74,19 @@
 			"-DWITH_OPENEXR=OFF",
 			"-DBUILD_opencv_python=OFF",
 			"-DBUILD_opencv_java=OFF",
-			"-DBUILD_opencv_flann=OFF",
 			"-DWITH_GSTREAMER=OFF",
 			"-DWITH_OPENJPEG=OFF",
+			"-DBUILD_opencv_tracking=OFF",
 			"-DBUILD_opencv_xfeatures2d=OFF",
 			"-DBUILD_opencv_ximgproc=OFF",
-			"-DBUILD_opencv_objdetect=OFF"			
+			"-DBUILD_opencv_objdetect=OFF"
 		],
-		"remainingFlags": [],
+		"remainingFlags": [
+		],
 		"failureFlags": [{
 				"flag": "-DBUILD_opencv_highgui=OFF"
+			},{
+				"flag": "-DBUILD_opencv_flann=OFF"
 			},{
 				"flag": "-DWITH_PNG=OFF"
 			},{
@@ -98,6 +100,6 @@
 			},{
 				"flag": "-DBUILD_opencv_features2d=OFF"
 		}],
-		"testStr": "assert(typeof((new cv.ORBDetector(500)).detect) === 'function'); assert(typeof(cv.imread) === 'function'); assert(typeof(cv.matchKnnFlannBased) === 'function');assert(typeof(cv.imread('./image.png')) === 'object')"
+		"testStr":"assert(typeof((new cv.ORBDetector(500)).detect) === 'function'); assert(typeof(cv.imread) === 'function'); assert(typeof(cv.matchKnnFlannBased) === 'function');assert(typeof(cv.imread('./image.png')) === 'object'); cv.matchKnnFlannBased(new cv.Mat([[\n\t\t\t   65,  56,  57,  97,  53, 205,  83, 22,\n\t\t\t  106, 232,  46,   8, 183, 145,  64, 48,\n\t\t\t  128,  60, 124,  24,  75, 248, 241, 30,\n\t\t\t  235, 253,  49, 112,  72,   0,  66, 42\n\t\t\t],\n\t\t\t[\n\t\t\t  162, 221,  55, 158, 124, 197, 190,\n\t\t\t  230, 221,  10, 216,  66, 228, 248,\n\t\t\t   53,  68, 200, 123,  27, 195, 228,\n\t\t\t  175,  90, 255,  53,  54, 142, 138,\n\t\t\t   21, 121, 117, 175\n\t\t\t],\n\t\t\t[\n\t\t\t  189, 145, 109, 235, 188,  31,  91,\n\t\t\t  184,   5, 120, 149, 174, 219,  79,\n\t\t\t  186,  97, 126, 148,  93, 239, 249,\n\t\t\t   33, 109, 157, 250, 203, 235, 244,\n\t\t\t   55, 175, 208, 113\n\t\t\t]], cv.CV_32FC1), new cv.Mat([\n\t\t\t\t[\n\t\t\t\t   74, 208, 242, 239, 101,  28, 254,\n\t\t\t\t   31,  43,  74, 254, 163, 237, 255,\n\t\t\t\t  156, 118, 255, 221, 191, 135, 196,\n\t\t\t\t   22, 227, 195, 247, 255, 218, 138,\n\t\t\t\t   23, 246, 227, 223\n\t\t\t\t],\n\t\t\t\t[\n\t\t\t\t   17,  13, 107, 254, 246, 230, 235,\n\t\t\t\t  115,  84, 200, 218,  66, 113, 233,\n\t\t\t\t  180,  96, 122, 235,  23, 169, 187,\n\t\t\t\t  187,  36, 255, 121, 175, 171, 192,\n\t\t\t\t  181, 170, 116, 161\n\t\t\t\t],\n\t\t\t\t[\n\t\t\t\t  248, 164, 189, 116, 137, 109,  81, 15,\n\t\t\t\t  243, 183, 166,  24, 246, 247,  64, 27,\n\t\t\t\t  129, 246, 108,  16,  58, 111, 251, 35,\n\t\t\t\t  219, 251,  85,  57, 192,  96, 198, 42\n\t\t\t\t],\n\t\t\t\t[\n\t\t\t\t  134, 180, 164, 187, 253, 229, 184, 207,\n\t\t\t\t   31,  91,  89,  19, 204, 254, 124,   9,\n\t\t\t\t  221,  91, 179, 145,  50,  94,  90, 243,\n\t\t\t\t   13,  22, 223, 239, 149,  77, 149, 147\n\t\t\t\t]], cv.CV_32FC1), 2)"
 	}
 }

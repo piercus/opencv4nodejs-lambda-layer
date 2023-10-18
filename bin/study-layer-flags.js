@@ -12,8 +12,8 @@ program.parse();
 
 const options = program.opts();
 
-studyLayerFlags(options).then(res => {
-	console.log(`Result is ${JSON.stringify(res, null, 4)}`)
+studyLayerFlags(options).then(result => {
+	console.log(`Result is ${JSON.stringify(result, null, 4)}`);
 }).catch(error => {
 	console.log(error.stack);
 	console.log(error);
